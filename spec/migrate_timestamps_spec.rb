@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../db/config'
+require_relative '../config'
 
 
 describe "add timestamps" do

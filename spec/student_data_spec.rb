@@ -1,6 +1,5 @@
 require 'rspec'
-require_relative '../app/models/student'
-
+require_relative '../config'
 
 describe Student, "Sample data" do
 

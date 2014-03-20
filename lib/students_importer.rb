@@ -1,5 +1,3 @@
-require_relative '../app/models/student'
-
 class StudentsImporter
 
   def initialize(filename=File.dirname(__FILE__) + "/../db/data/students.csv")
