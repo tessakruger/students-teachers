@@ -99,6 +99,10 @@ Without resorting to using SQL or SQLite, write some Ruby code that uses ActiveR
 
 While you're at it, please ensure that no 2 teachers can share the same email address using an ActiveRecord validation. Write a test to be sure that it works.
 
+#### Bonus
+
+Implement a CSV-based mechanism for loading the sample teachers much like how `students.csv` is a convenient way to "seed" the students table with sample data. You can use much of the same code as `StudentsImporter`.
+
 ### 6. Create a One-to-Many association between Teachers and Students
 
 Let's assume for the time being that each student has only 1 teacher, and each teacher can have many students. Does your Teacher model need to change? How about your student model? Do you need a migration?
