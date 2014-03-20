@@ -76,7 +76,16 @@ So we can just require that one file when we start pry. Give it a shot from the 
 
     pry -r './config.rb'
 
+Now you should be able to interactively inspect the database using AR.
+
+    pry(main)> Student.first
+    pry(main)> Student.count
+
+_Suggestion:_ Use a dedicated tab in your Terminal to keep a pry session open. Note thought that if you make changes to your database or code, you'll want to restart the pry session.
+
 ### 4. Add a Teacher Model
+
+Students are useless without teachers. So let's introduce teachers to the app.
 
 Create a `Teacher` model that extends `ActiveRecord::Base`.
 
