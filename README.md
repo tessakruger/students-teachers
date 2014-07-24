@@ -90,6 +90,12 @@ Once you implement it, run `rake db:migrate` to run the migration against the da
 
 We wrote a test case that checks if you created the students table: `spec/migrate_create_table_spec.rb`. Run this `rspec` test case to check your migration worked.
 
+Remember to prefix your commands with `bundle exec` which tells Ruby to use the correct gem versions from the `Gemfile`. For example:
+
+```
+bundle exec rspec spec/migrate_create_table_spec.rb
+```
+
 Take a look at the spec file to see what fields it's expecting. How is it working?
 
 
