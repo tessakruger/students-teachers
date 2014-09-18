@@ -74,8 +74,6 @@ describe Student, "validations" do
   end
 
   it "shouldn't allow two students with the same email" do
-    Student.where(email: @student.email).destroy_all
-
     another_student = Student.create!(
       :birthday => @student.birthday,
       :email => @student.email,

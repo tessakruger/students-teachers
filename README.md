@@ -140,7 +140,7 @@ You'll also need to create (`touch`) a new migration file in `db/migrate` to cre
 
 The teachers migration file name must start with a bunch of numbers that represent the exact timestamp of when you created the migration. The students migration file is called `20140319144238_create_students.rb`. This means the migration was created on March 3rd, 2014 at 14:42:38. Precede the migration file you are about to create with a timestamp for the current date and time.
 
-We want to store the following information about a teacher:  `name`, `email` `address`, and `phone_number`. 
+We want to store the following information about a teacher:  `name`, `email`, `address`, and `phone_number`. 
 
 
 ### 5. Insert sample Teacher data
@@ -161,7 +161,7 @@ Implement a CSV-based mechanism for loading the sample teachers much like how `s
 
 At this point you should have students and teachers in the database. 
 
-Let's say that we need each student to have a teach, and each teacher to have many students. Does your Teacher model need to change? How about your Student model? Do you need a migration?
+Let's say that we need each student to have a teacher, and each teacher to have many students. Does your Teacher model need to change? How about your Student model? Do you need a migration?
 
 Make the necessary changes to your code to support this new constraint on the data.
 
@@ -198,3 +198,13 @@ Make the necessary changes to your models (along with any necessary migrations) 
 #### Bonus
 
 Write tests to ensure that your association is working correctly. For example, given a student, can you find her teachers? Can you find all students for a given teacher?
+
+### 9. Spec file for students!
+
+There is a `student_spec.rb` file in this repo. Does your code pass all of the tests? Go through and look at the validations that the student_spec file wants to enforce. Look at some of the RSpec methods being used, such as `be_valid` which tests that your validations pass on your student records.
+
+#### Bonus
+
+Write a `teacher_spec.rb` file to validate your Teacher model's validations. 
+
+_Tip:_ Are there other tests that should be run on Teachers other than Students?
