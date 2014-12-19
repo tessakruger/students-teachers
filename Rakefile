@@ -7,14 +7,12 @@ require_relative 'lib/students_importer'
 
 desc "create the database"
 task "db:create" do
-  touch 'db/development.sqlite3'
-  touch 'db/test.sqlite3'
+  touch "db/#{DATABASE}.sqlite3"
 end
 
 desc "drop the database"
 task "db:drop" do
-  rm_f 'db/development.sqlite3'
-  rm_f 'db/test.sqlite3'
+  rm_f "db/#{DATABASE}.sqlite3"
 end
 
 desc "dump the database" 
@@ -56,4 +54,4 @@ end
 desc "Run the specs"
 RSpec::Core::RakeTask.new(:specs)
 
-task :default  => :specs
+task :default => :specs

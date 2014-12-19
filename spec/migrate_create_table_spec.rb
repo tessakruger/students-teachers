@@ -1,5 +1,5 @@
 require 'rspec'
-require_relative '../config'
+require_relative '../spec_helper'
 
 
 describe "create table with correct schema" do
@@ -28,11 +28,10 @@ describe "create table with correct schema" do
     actual_columns = ActiveRecord::Base.connection.columns(:students)
     expected.each do |column_name, data_type|
       column = actual_columns.detect {|c| c.name == column_name.to_s && c.type == data_type }
-      column.should_not be_nil, "Expected column #{column_name} of type #{data_type} to be in the table, but no dice!"
+      error = "Expected column '#{column_name}' of type :#{data_type} to be in the table, but no dice!"
+      column.should_not be_nil, error
     end
 
   end
-
-
 
 end

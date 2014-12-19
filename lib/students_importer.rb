@@ -8,15 +8,23 @@ class StudentsImporter
     field_names = ['first_name', 'last_name', 'gender', 'birthday', 'email', 'phone']
 
     print "Importing students from #{@filename}: "
+    failure_count = 0
+
     Student.transaction do
       File.open(@filename).each do |line|
         data = line.chomp.split(',')
         attribute_hash = Hash[field_names.zip(data)]
-        student = Student.create!(attribute_hash)
-        print "."; STDOUT.flush
+        begin
+          student = Student.create!(attribute_hash)
+          print "."; STDOUT.flush
+        rescue ActiveRecord::UnknownAttributeError
+          print "!"; STDOUT.flush
+          failure_count += 1
+        end
       end
     end
-    puts "\nDONE"
+    failures = "(failed to create #{failure_count} student records)" if failure_count > 0
+    puts "\nDONE #{failures}\n\n"
   end
 
 end
