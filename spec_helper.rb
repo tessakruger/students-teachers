@@ -2,15 +2,21 @@ ENV['TEST'] = '1'
 require_relative './config'
 
 require 'rake'
+require 'rspec'
+require 'database_cleaner'
+
 load 'Rakefile'
 
-puts "Preparing (re-building) test db ... "
-puts "============================"
+# Clean the database between each test run using the database cleaner
+RSpec.configure do |config|
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with :truncation
+  end
 
-Rake::Task["db:drop"].invoke
-Rake::Task["db:create"].invoke
-Rake::Task["db:migrate"].invoke
-Rake::Task["db:populate"].invoke
-
-puts "Done preparing, running tests ... "
-puts "============================"
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
+    end
+  end
+end
