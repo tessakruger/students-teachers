@@ -88,9 +88,16 @@ Once you implement it, run `rake db:migrate` to run the migration against the da
 
 #### Step 3 - Make sure the tests pass
 
-We wrote a test case that checks if you created the students table: `spec/migrate_create_table_spec.rb`. Run this `rspec` test case to check your migration worked.
+We wrote a test case that checks if you created the students table: `spec/migrate_create_table_spec.rb`. 
 
-Remember to prefix your commands with `bundle exec` which tells Ruby to use the correct gem versions from the `Gemfile`. For example:
+To set up the database for the test environment run
+
+    rake db:create TEST=1
+    rake db:migrate TEST=1
+
+Append `TEST=1` to all rake commands when you want to make those rake commands apply to the test database.
+
+Run this `rspec` test case to check your migration worked. Remember to prefix your commands with `bundle exec` which tells Ruby to use the correct gem versions from the `Gemfile`. For example:
 
 ```
 bundle exec rspec spec/migrate_create_table_spec.rb
