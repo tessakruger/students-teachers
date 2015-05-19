@@ -28,7 +28,6 @@ You probably remember how to associate tables in a database using foreign keys. 
 
 Migrations are ActiveRecord's way for allowing us to modify the database structure using ruby code. 
 
-
 Instead of creating a table manually using a SQL query like this...
 
 ```SQL
@@ -92,8 +91,8 @@ We wrote a test case that checks if you created the students table: `spec/migrat
 
 To set up the database for the test environment run
 
-    rake db:create TEST=1
-    rake db:migrate TEST=1
+  rake db:create TEST=1
+  rake db:migrate TEST=1
 
 Append `TEST=1` to all rake commands when you want to make those rake commands apply to the test database.
 

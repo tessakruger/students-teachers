@@ -1,20 +1,13 @@
-require 'rspec'
-require_relative '../config'
-
-
-describe "add timestamps" do
-  it "should have the right columns and types" do
-    found_created_at = found_updated_at = false
+describe 'add timestamps' do
+  it 'should have the right columns and types' do
+    expected_cols = ['created_at', 'updated_at']
+    found_cols = []
     ActiveRecord::Base.connection.columns(:students).each do |col|
-      case col.name
-      when "created_at"
-        found_created_at = true
-        col.type.should == :datetime
-      when "updated_at"
-        found_updated_at = true
-        col.type.should == :datetime
+      if expected_cols.include?(col)
+        expect(col.type).to eq(:datetime)
+        found_cols << col
       end
     end
-    (found_created_at && found_updated_at).should be_true
+    expect(found_cols).to eq(expected_cols)
   end
 end

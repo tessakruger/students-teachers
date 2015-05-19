@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'sqlite3'
+gem 'activerecord'
 gem 'activesupport'
 gem 'rake'
-gem 'activerecord', :require => 'active_record'
-gem 'rspec', '~> 2.14.0'
+gem 'rspec'
 gem 'database_cleaner'

@@ -1,8 +1,7 @@
 ENV['TEST'] = '1'
-require_relative './config'
+require './config'
 
 require 'rake'
-require 'rspec'
 require 'database_cleaner'
 
 load 'Rakefile'
