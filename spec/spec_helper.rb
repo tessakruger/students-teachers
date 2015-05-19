@@ -1,12 +1,12 @@
-ENV['TEST'] = '1'
+# Hard code the DATABASE environment variable so that it only connects
+# to the test database when running rspec. Take a look inside config.rb
+# to see how this value is being used.
+ENV['DATABASE'] = 'test'
 require './config'
 
-require 'rake'
+# Clean the database between each test run using the database cleaner
 require 'database_cleaner'
 
-load 'Rakefile'
-
-# Clean the database between each test run using the database cleaner
 RSpec.configure do |config|
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction

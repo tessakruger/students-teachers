@@ -1,6 +1,7 @@
 describe Student, 'Sample data' do
   before :each do
-    StudentsImporter.new.import
+    students_fixture_path = File.absolute_path('fixtures/students.csv', File.dirname(__FILE__))
+    StudentsImporter.new(students_fixture_path).import
   end
 
   it 'should contain one of the students from the CSV' do
