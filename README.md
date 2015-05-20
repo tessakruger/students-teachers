@@ -103,18 +103,19 @@ Take a look at the spec file to see what fields it's expecting. How is it workin
 
 To debug/inspect the database, it would be nice to interactively just use ActiveRecord within something like `pry`.
 
-In this project the `config.rb` file does all the following "loading" work:
+In this project the `app_config.rb` file does all the following "loading" work:
 
-1. Requires a bunch of gems like `active_record`.
-2. Establishes a connection to the database.
-3. Requires our model classes.
+1. Requires a gems like `active_record`.
+2. Requires our model classes.
+3. Exposes a method for connecting to the database.
 
 So we can just require that one file when we start pry. Give it a shot from the command line:
 
-    pry -r './config.rb'
+    pry -r './app_config.rb'
 
 Now you should be able to interactively inspect the database using AR.
 
+    pry(main)> AppConfig.establish_connection
     pry(main)> Student.first
     pry(main)> Student.count
 
