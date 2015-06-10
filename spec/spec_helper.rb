@@ -1,3 +1,5 @@
+require 'rspec'
+
 # Hard code the DATABASE environment variable so that it only connects
 # to the test database when running rspec. Take a look inside config.rb
 # to see how this value is being used.

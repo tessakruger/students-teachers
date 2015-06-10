@@ -1,3 +1,5 @@
+require_relative 'spec_helper'
+
 describe 'add timestamps' do
   it 'should have the right columns and types' do
     expected_cols = ['created_at', 'updated_at']

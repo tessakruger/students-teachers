@@ -1,3 +1,5 @@
+require_relative 'spec_helper'
+
 describe Student, 'Sample data' do
   before :each do
     students_fixture_path = File.absolute_path('fixtures/students.csv', File.dirname(__FILE__))
