@@ -121,7 +121,7 @@ Now you should be able to interactively inspect the database using AR.
 
 For now, we don't have any data in the database, so `Student.first` will return `nil` and `Student.count` will return `0`.
 
-**Suggestion:** Use a dedicated tab in your Terminal to keep a pry session open. Note thought that if you make changes to your database or code, you'll want to restart the pry session.
+**Suggestion:** Use a dedicated tab in your Terminal to keep a pry session open. Note that if you make changes to your database or code, you'll want to restart the pry session.
 
 ### 3. Import sample students
 
