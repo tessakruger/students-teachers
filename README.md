@@ -23,6 +23,8 @@ You probably remember how to associate tables in a database using foreign keys. 
 3. Install the necessary dependencies using Bundler: `bundle`
 4. Create your database: `rake db:create`
 
+**Note:** There are bonuses for several questions. Come back to these after you have completed the entire activity.
+
 ## What are Migrations?
 
 Migrations are ActiveRecord's way for allowing us to modify the database structure using ruby code. 
@@ -39,18 +41,18 @@ CREATE TABLE employees (
 );
 ```
 
-...we can use an ActiveRecord migration class to define the table:
+...we can use an ActiveRecord migration class to define the table.
 
 ```ruby
 class CreateEmployees < ActiveRecord::Migration
 
-    def change
-        create_table :employees do |t|
-            t.string :first_name
-            t.string :last_name
-            t.string :address
-        end
+  def change
+    create_table :employees do |t|
+      t.string :first_name
+      t.string :last_name
+      t.string :address
     end
+  end
 
 end
 ```
@@ -176,17 +178,13 @@ Make the necessary changes to your code to support this new constraint on the da
     # => returns the student's teacher
     pry(main)> first_teacher = Teacher.first
     pry(main)> first_teacher.students
-    # => returns an array that contains first_teacher
+    # => returns an array that contains first_student
 
 #### Bonus
 
 Write tests to ensure that your association is working correctly. For example, given a student, can you find a teacher? Can you find all of her other students?
 
-### 7. Distribute students across the teachers
-
-Once you have associated students and teachers, write some code that will arbitrarily distribute the students fairly evenly across the teachers. For example, if we have 12 students and 2 teachers, we want each teacher to have 6 students. If we have 20 students and 3 teachers we want one teacher to have 6 students and two teachers to have 7 students.
-
-### 8. Uh-oh! The requirements have changed
+### 7. Uh-oh! The requirements have changed
 
 The customer for whom you're building this system just changed her mind. It turns out that the system needs to support the notion that a student can have more than one teacher.
 
@@ -196,12 +194,10 @@ Make the necessary changes to your models (along with any necessary migrations) 
 
 Write tests to ensure that your association is working correctly. For example, given a student, can you find her teachers? Can you find all students for a given teacher?
 
-### 9. Spec file for students!
+### 8. Spec file for students!
 
 There is a `student_spec.rb` file in this repo. Does your code pass all of the tests? Go through and look at the validations that the `student_spec` file wants to enforce. Look at some of the RSpec methods being used, such as `be_valid` which tests that your validations pass on your student records.
 
 #### Bonus
 
 Write a `teacher_spec.rb` file to validate your Teacher model's validations. 
-
-**Tip:** Are there other tests that should be run on Teachers other than Students?
