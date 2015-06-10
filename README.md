@@ -139,7 +139,7 @@ Once the students table is built and the `spec/migrate_create_table_spec.rb` tes
 
 Students need teachers. So let's introduce teachers to the app.
 
-Create a `Teacher` model that extends `ActiveRecord::Base`. This model should be created in its own Ruby file and in the right folder (`app/models`).
+Create a `Teacher` model that extends `ActiveRecord::Base`. This model should be created in its own Ruby file and in the right folder (`app/models`). Then you'll need to require it in `app_config.rb` so that it's available to the other files in the project.
 
 You'll also need to create (`touch`) a new migration file in `db/migrate` to create the teachers table. 
 
@@ -154,6 +154,8 @@ Without resorting to using SQL or SQLite, write some Ruby code that uses __Activ
 While you're at it, please ensure that no 2 teachers can share the same email address using an ActiveRecord validation. 
 
 The student data is imported using a class we wrote called StudentsImporter in `lib/students_importer.rb`. To create the 9 teachers, create your own TeachersImporter class in `lib/teachers_importer.rb`.
+
+With your new `TeachersImporter`, you'll need to require it in `app_config.rb` and also edit the `Rakefile`'s `db:populate` task to run it.
 
 Write a test to be sure creating a Teacher works and the email validation works.
 
