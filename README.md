@@ -145,7 +145,7 @@ You'll also need to create (`touch`) a new migration file in `db/migrate` to cre
 
 The teachers migration file name must start with a bunch of numbers that represent the exact timestamp of when you created the migration. The students migration file is called `20140319144238_create_students.rb`. This means the migration was created on March 3rd, 2014 at 14:42:38. Precede the migration file you are about to create with a timestamp for the current date and time.
 
-We want to store the following information about a teacher:  `name`, `email`, `address`, and `phone_number`. 
+We want to store the following information about a teacher:  `name`, `email`, `address`, and `phone`. 
 
 ### 5. Insert sample Teacher data
 
