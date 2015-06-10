@@ -101,6 +101,8 @@ Run this `rspec` test case to check your migration worked. Remember to prefix yo
 
 Take a look at the spec file to see what fields it's expecting. How is it working?
 
+If any of the tests fail, you may need to rollback your migration. Use `rake db:rollback DATABASE=test` to reverse the migration against the test database. Then you can fix the migration file and run it again with `rake db:migrate DATABASE=test`. Run the tests again to see if your new migration fixed the errors.
+
 ### 2. Command line
 
 To debug/inspect the database, it would be nice to interactively just use ActiveRecord within something like `pry`.
