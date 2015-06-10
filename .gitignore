@@ -1,5 +1,1 @@
-Gemfile.lock
 db/*.sqlite3
-*/*-solved.rb
-**.orig
-.DS_Store
