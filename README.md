@@ -188,17 +188,7 @@ Make the necessary changes to your code to support this new constraint on the da
 
 Write tests to ensure that your association is working correctly. For example, given a student, can you find a teacher? Can you find all of her other students?
 
-### 7. Uh-oh! The requirements have changed
-
-The customer for whom you're building this system just changed her mind. It turns out that the system needs to support the notion that a student can have more than one teacher.
-
-Make the necessary changes to your models (along with any necessary migrations) to support this.
-
-#### Bonus
-
-Write tests to ensure that your association is working correctly. For example, given a student, can you find her teachers? Can you find all students for a given teacher?
-
-### 8. Spec file for students!
+### 7. Spec file for students
 
 There is a `student_spec.rb` file in this repo. Does your code pass all of the tests? Go through and look at the validations that the `student_spec` file wants to enforce. Look at some of the RSpec methods being used, such as `be_valid` which tests that your validations pass on your student records.
 
