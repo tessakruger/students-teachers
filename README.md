@@ -190,7 +190,8 @@ Write tests to ensure that your association is working correctly. For example, g
 
 ### 7. Spec file for students
 
-There is a `student_spec.rb` file in this repo. Does your code pass all of the tests? Go through and look at the validations that the `student_spec` file wants to enforce. Look at some of the RSpec methods being used, such as `be_valid` which tests that your validations pass on your student records.
+There is a `student_spec.rb` file in this repo. Implement changes to the `Student` class to make the tests pass.
+RSpec Tip: the `be_valid` method expects that calling `.valid?` on the ActiveRecord object will return true.
 
 #### Bonus
 
