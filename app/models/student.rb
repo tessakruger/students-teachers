@@ -7,12 +7,12 @@ class Student < ActiveRecord::Base
   validates :age, numericality: { greater_than: 3 }
 
   def name
-  	"#{self.first_name} #{self.last_name}"
+    "#{self.first_name} #{self.last_name}"
   end
 
   def age
-  	now = Date.today
+    now = Date.today
     age = now.year - self.birthday.year - ((now.month > self.birthday.month || (now.month == self.birthday.month && now.day >= self.birthday.day)) ? 0 : 1)
   end
-  
+
 end
