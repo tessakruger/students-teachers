@@ -3,4 +3,8 @@ Garry,Hicks,male,1990-01-01,garry.hicks@example.com,415-555-3332
 Rachel,Ng,female,1970-01-01,rachel.ng@example.com,415-555-3345
 Lindsey,Miller,female,1984-01-01,lindsey.miller@example.com,415-555-3486
 Ian,Smith,male,1975-01-01,ian.smith@example.com,415-555-0011
+<<<<<<< HEAD
 Cody,Zazulak,male,1979-01-01,cody.z@example.com,415-555-2431
+=======
+Cody,Zazulak,male,1979-01-01,cody.z@example.com,415-555-2431
+>>>>>>> b82466980e979d246c4480fc38cf2d01a9788fbc

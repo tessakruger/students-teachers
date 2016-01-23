@@ -1,4 +1,5 @@
 class Student < ActiveRecord::Base
+<<<<<<< HEAD
 
   belongs_to :teacher
 
@@ -16,3 +17,7 @@ class Student < ActiveRecord::Base
   end
 
 end
+=======
+  # implement your Student model here
+end
+>>>>>>> b82466980e979d246c4480fc38cf2d01a9788fbc

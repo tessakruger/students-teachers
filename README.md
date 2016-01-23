@@ -153,9 +153,13 @@ Without resorting to using SQL or SQLite, write some Ruby code that uses __Activ
 
 While you're at it, please ensure that no 2 teachers can share the same email address using an ActiveRecord validation. 
 
+<<<<<<< HEAD
 ***
 The student data is imported using a class we wrote called StudentsImporter in `lib/students_importer.rb`. To create the 9 teachers, create your own TeachersImporter class in `lib/teachers_importer.rb`.
 ***
+=======
+The student data is imported using a class we wrote called StudentsImporter in `lib/students_importer.rb`. To create the 9 teachers, create your own TeachersImporter class in `lib/teachers_importer.rb`.
+>>>>>>> b82466980e979d246c4480fc38cf2d01a9788fbc
 
 With your new `TeachersImporter`, you'll need to require it in `app_config.rb` and also edit the `Rakefile`'s `db:populate` task to run it.
 

@@ -43,7 +43,11 @@ desc 'populate the test database with data'
 task 'db:populate' do
   AppConfig.establish_connection
   StudentsImporter.new.import
+<<<<<<< HEAD
   TeachersImporter.new.create_teachers
+=======
+  # Invoke your TeachersImporter here
+>>>>>>> b82466980e979d246c4480fc38cf2d01a9788fbc
 end
 
 desc 'Retrieves the current schema version number'
