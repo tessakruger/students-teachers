@@ -1,10 +1,9 @@
 class Student < ActiveRecord::Base
-<<<<<<< HEAD
 
   belongs_to :teacher
 
   validates :email, uniqueness: true
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
   validates :age, numericality: { greater_than: 3 }
 
   def name
@@ -15,9 +14,5 @@ class Student < ActiveRecord::Base
   	now = Date.today
     age = now.year - self.birthday.year - ((now.month > self.birthday.month || (now.month == self.birthday.month && now.day >= self.birthday.day)) ? 0 : 1)
   end
-
+  
 end
-=======
-  # implement your Student model here
-end
->>>>>>> b82466980e979d246c4480fc38cf2d01a9788fbc
