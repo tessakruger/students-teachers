@@ -1,13 +1,11 @@
-class CreateStudents < ActiveRecord::Migration
+class CreateTeachers < ActiveRecord::Migration
   
   def change
-    create_table :students do |t|
+    create_table :teachers do |t|
       t.column :first_name, :string
       t.column :last_name, :string
-      t.column :gender, :string
       t.column :email, :string
       t.column :phone, :string
-      t.column :birthday, :date
       t.timestamps null: false
     end
   end

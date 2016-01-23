@@ -2,7 +2,8 @@ require 'active_record'
 require 'active_support/all'
 require './lib/students_importer'
 require './app/models/student'
-# Add new app/ and lib/ files here when they are created.
+require './app/models/teacher'
+require './lib/teachers_importer'
 
 module AppConfig
 
